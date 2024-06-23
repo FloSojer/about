@@ -24,25 +24,25 @@
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <a (click)="router.navigate([''])" 
+                        <a (click)="navigateTo('/')" 
                             [ngClass]="isDark ? 
                             route === '/' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
                             route === '/' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
                             Home
                         </a>
-                        <a (click)="router.navigate([''])"
+                        <a (click)="navigateTo('/about')"
                         [ngClass]="isDark ? 
                         route === '/about' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
                         route === '/about' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
                             About Me
                         </a>
-                        <a (click)="router.navigate([''])"
+                        <a (click)="navigateTo('/services')"
                         [ngClass]="isDark ? 
                         route === '/services' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
                         route === '/services' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
                             Services
                         </a>
-                        <a (click)="router.navigate([''])"
+                        <a (click)="navigateTo('/references')"
                         [ngClass]="isDark ? 
                         route === '/references' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
                         route === '/references' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
