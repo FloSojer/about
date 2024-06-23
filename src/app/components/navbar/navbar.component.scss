@@ -1,10 +1,10 @@
 .mobileSelectedDark {
     display: block;
-    border-radius: 6px;// rounded-md
+    border-radius: 6px;
     background-color: var(--contrastShade50); //bg-primary
     padding: 8px 12px; //px-3 py-2
-    font-size: 14px;
-    line-height: 20px; //text-sm
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 500; //font-medium
     color: var(--contrastTint70); //text-contrast
 }
@@ -14,8 +14,8 @@
     border-radius: 6px;// rounded-md
     background-color: var(--contrast); //bg-primary
     padding: 8px 12px; //px-3 py-2
-    font-size: 14px;
-    line-height: 20px; //text-sm
+    font-size: 16px;
+    line-height: 24px; //text-sm
     font-weight: 500; //font-medium
     color: var(--contrastShade50); //text-contrast
 }
@@ -24,10 +24,10 @@
     display: block;
     border-radius: 6px;
     padding: 8px 12px;
-    font-size: 16px;
-    line-height: 24px; //text-sm
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
-    color: var(--ccontrastShade50);
+    color: var(--contrastShade50);
     
     &:hover {
         background-color: var(--contrastShade20);
@@ -39,13 +39,56 @@
     display: block;
     border-radius: 6px;
     padding: 8px 12px;
-    font-size: 16px;
-    line-height: 24px; //text-sm
+    font-size: 14px;
+    line-height: 20px; //text-sm
     font-weight: 500;
     color: var(--primaryTint);
     
     &:hover {
         background-color: var(--primaryTint);
         color: var(--primaryShade)
+    }
+}
+
+.lgNavItem {
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: 500;
+
+}
+
+.lgNavItemLightSelected {
+    font-size: 16px;
+    line-height: 24px;
+    background-color: var(--contrast);
+    color: var(--contrastShade50)
+}
+
+.lgNavItemLightPlain {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--primaryTint);
+
+    &:hover {
+        background-color: var(--primaryTint);
+        color: var(--primaryShade)
+    }
+}
+
+.lgNavItemDarkSelected {
+    font-size: 16px;
+    line-height: 24px;
+    background-color: var(--contrastShade50);
+    color: var(--contrastTint70);
+}
+
+.lgNavItemDarkPlain {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--contrastShade50);
+
+    &:hover {
+        background-color: var(--contrastShade20);
+        color: var(--contrastTint50);
     }
 }

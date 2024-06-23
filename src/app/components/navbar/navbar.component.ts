@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DarkthemeService } from '../../services/darktheme.service';
-import { faPersonBiking, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faPersonBiking, faMoon, faSun, faBars, faX } from '@fortawesome/free-solid-svg-icons';
 import { faMoon as faMoonLight} from '@fortawesome/free-regular-svg-icons';
 
 
@@ -22,7 +22,10 @@ export class NavbarComponent implements OnInit{
   icons = {
     personBiking: faPersonBiking,
     moon: faMoon,
-    moonLight: faMoonLight
+    sun: faSun,
+    moonLight: faMoonLight,
+    bars: faBars,
+    x: faX
   }
 
   pages: string[] = [

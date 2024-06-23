@@ -8,44 +8,45 @@
                     <span class="absolute -inset-0.5"></span>
                     <span class="sr-only">Open main menu</span>
                     @if(!menuOpen){
-                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
+                    <fa-icon [icon]="icons.bars" [ngClass]="isDark ? 'text-primary' : 'text-contrast'" class="text-2xl">
+                    </fa-icon>
                     } @else {
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <fa-icon [icon]="icons.x" [ngClass]="isDark ? 'text-primary' : 'text-contrast'" class="text-2xl">
+                    </fa-icon>
                     }
                 </button>
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex flex-shrink-0 items-center">
                     <!-- LOGO -->
-                     <fa-icon [icon]="icons.personBiking" [ngClass]="isDark ? 'text-primary' : 'text-contrast'"> </fa-icon>
+                    <fa-icon [icon]="icons.personBiking" [ngClass]="isDark ? 'text-primary' : 'text-contrast'"
+                        class="text-2xl"> </fa-icon>
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a (click)="router.navigate([''])"
-                            ngClass=""
-                            class="mobileSelected"
-                            aria-current="page">
+                        <a (click)="router.navigate([''])" 
+                            [ngClass]="isDark ? 
+                            route === '/' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
+                            route === '/' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
                             Home
                         </a>
                         <a (click)="router.navigate([''])"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                        [ngClass]="isDark ? 
+                        route === '/about' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
+                        route === '/about' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
                             About Me
                         </a>
                         <a (click)="router.navigate([''])"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                            Pricing
+                        [ngClass]="isDark ? 
+                        route === '/services' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
+                        route === '/services' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
+                            Services
                         </a>
                         <a (click)="router.navigate([''])"
-                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                            Gageml
+                        [ngClass]="isDark ? 
+                        route === '/references' ?  'lgNavItem lgNavItemDarkSelected' : 'lgNavItem lgNavItemDarkPlain' : 
+                        route === '/references' ? 'lgNavItem lgNavItemLightSelected ':'lgNavItem lgNavItemLightPlain'">
+                            References
                         </a>
                     </div>
                 </div>
@@ -55,9 +56,9 @@
                     class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white">
                     <span class="absolute -inset-1.5"></span>
                     @if(isDark){
-                        <fa-icon [icon]="icons.moon" class="text-primary"></fa-icon>
+                    <fa-icon [icon]="icons.moon" class="text-primary text-2xl"></fa-icon>
                     }@else {
-                        <fa-icon [icon]="icons.moonLight" class="text-contrast"></fa-icon>
+                    <fa-icon [icon]="icons.sun" class="text-contrast text-2xl"></fa-icon>
                     }
                 </button>
             </div>
@@ -69,29 +70,25 @@
     <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a (click)="navigateTo('/')" 
-                [ngClass]="isDark ? 
+            <a (click)="navigateTo('/')" [ngClass]="isDark ? 
                     route === '/' ?  'mobileSelectedDark' : 'mobileNavItemDark' : 
                     route === '/' ? 'mobileSelectedLight ':'mobileNavItemLight'">
-                TEST
+                Home
             </a>
-            <a (click)="navigateTo('/about')" 
-            [ngClass]="isDark ? 
+            <a (click)="navigateTo('/about')" [ngClass]="isDark ? 
             route === '/about' ?  'mobileSelectedDark' : 'mobileNavItemDark' : 
             route === '/about' ? 'mobileSelectedLight ':'mobileNavItemLight'">
                 About Me
             </a>
-            <a (click)="navigateTo('/services')"                 
-            [ngClass]="isDark ? 
+            <a (click)="navigateTo('/services')" [ngClass]="isDark ? 
             route === '/services' ?  'mobileSelectedDark' : 'mobileNavItemDark' : 
             route === '/services' ? 'mobileSelectedLight ':'mobileNavItemLight'">
                 Services
             </a>
-            <a (click)="navigateTo('/test')"
-                [ngClass]="isDark ? 
-                route === '/test' ?  'mobileSelectedDark' : 'mobileNavItemDark' : 
-                route === '/test' ? 'mobileSelectedLight ':'mobileNavItemLight'">
-                TEST
+            <a (click)="navigateTo('/test')" [ngClass]="isDark ? 
+                route === '/references' ?  'mobileSelectedDark' : 'mobileNavItemDark' : 
+                route === '/references' ? 'mobileSelectedLight ':'mobileNavItemLight'">
+                References
             </a>
         </div>
     </div>
