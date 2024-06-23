@@ -3,3 +3,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --primary: #5b7441;
+        --primaryTint: #adbaa0;
+        --primaryShade: #2e3a21;
+    
+        --contrast: #b2cb80;
+        --contrastTint20: #c1d599;
+        --contrastTint50: #d9e5c0;
+        --contrastTint70: #e8efd9;
+        --contrastShade20: #8ea266;
+        --contrastShade50: #596640;
+
+        
+    }
+  }
