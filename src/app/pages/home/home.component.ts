@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, Component, OnInit } from '@angular/core';
 import { DarkthemeService } from '../../services/darktheme.service';
 import { NgClass } from '@angular/common';
+import { gsap } from "gsap";
+import { Flip } from "gsap/Flip";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 @Component({
     selector: 'app-home',
@@ -9,19 +12,16 @@ import { NgClass } from '@angular/common';
     styleUrl: './home.component.scss',
     imports: [NgClass]
 })
-export class HomeComponent implements OnInit {
-  isDark: boolean = false;
+export class HomeComponent implements OnInit, AfterContentInit {
 
   constructor(
-    private darkThemeService: DarkthemeService
   ){}
 
   ngOnInit(): void {
-    this.isDark = this.darkThemeService.getDark();
-    this.darkThemeService.darkThemeSetter.subscribe({
-      next: () => {
-        this.isDark = !this.isDark;
-      }
-    })
+    gsap.registerPlugin(Flip,ScrollTrigger);
+  }
+
+  ngAfterContentInit(): void {
+    
   }
 }

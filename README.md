@@ -6,3 +6,5 @@ Build with:
 * Angular
 * Tailwind
 * Icons of Fontawesome
+
+Colors Selected with https://colourcontrast.cc/5b7441/b2cb80 
