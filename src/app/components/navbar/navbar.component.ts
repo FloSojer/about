@@ -16,7 +16,6 @@ import { faMoon as faMoonLight} from '@fortawesome/free-regular-svg-icons';
 })
 export class NavbarComponent implements OnInit{
   menuOpen: boolean = false;
-  isDark: boolean = false;
   route: string = '';
 
   icons = {
@@ -34,18 +33,11 @@ export class NavbarComponent implements OnInit{
   ]
 
   constructor(
-    public router: Router,
-    private darkTheme: DarkthemeService
+    public router: Router
   ){
   }
 
   ngOnInit(): void {
-    this.isDark = this.darkTheme.getDark();
-    this.darkTheme.darkThemeSetter.subscribe({
-      next: () => {
-        this.isDark = !this.isDark;
-      }
-    });
 
     this.router.events.subscribe((value) => {
       if(value instanceof NavigationEnd) {  
@@ -57,10 +49,6 @@ export class NavbarComponent implements OnInit{
 
   setMenuOpen(): void {
     this.menuOpen = !this.menuOpen;
-  }
-
-  setDarkTheme(){
-    this.darkTheme.darkThemeSetter.emit();
   }
 
   navigateTo(path: string){
